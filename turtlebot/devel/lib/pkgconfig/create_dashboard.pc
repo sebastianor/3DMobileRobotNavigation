@@ -1,8 +1,0 @@
-prefix=/home/wojciech/turtlebot/devel
-
-Name: create_dashboard
-Description: Description of create_dashboard
-Version: 2.3.1
-Cflags: 
-Libs: -L/home/wojciech/turtlebot/devel/lib 
-Requires: 

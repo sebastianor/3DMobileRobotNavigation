@@ -10,6 +10,7 @@ roslaunch turtlebot_rviz_launchers view_navigation.launch
 roslaunch turtlebot_teleop keyboard_teleop.launch
 
 source /opt/ros/kinetic/setup.bash
+roslaunch octomap_turtlebot.launch
 
 rosrun map_saver map_saver -f map.yaml map:=projected_map
 

@@ -13,7 +13,7 @@ source /opt/ros/kinetic/setup.bash
 
 rosrun map_saver map_saver -f map.yaml map:=projected_map
 
-roslaunch turtle_rviz_launchers view_robot.launch
+roslaunch turtlebot_rviz_launchers view_robot.launch
 
 roslaunch openni_launch openni.launch
 

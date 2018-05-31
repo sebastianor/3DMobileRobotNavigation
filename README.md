@@ -38,6 +38,12 @@ rosrun map_saver map_saver -f map.yaml map:=projected_map
 
 if last command does not works try to move map_saver file to devel/lib in catkin_workspace file
 
-To load saved map into rviz run 
+To load saved map and navigate in rviz run
+
+roslaunch turtlebot_gazebo turtlebot_world.launch
 
 roslaunch turtlebot_gazebo amcl_demo.launch map_file:=path-to-file/map.yaml
+roslaunch turtlebot_rviz_launchers view_navigation.launch
+
+
+If map is not loading correcty check the map.yaml file. 1) Correct the path to pgm file 2) set z origin from NaN to 0.0000

@@ -55,6 +55,7 @@ $ rviz rviz
  ```sh
 $ rosrun map_saver map_saver -f map.yaml map:=projected_map
 ```
+> Sometimes this command may not works so you have to copy map_saver file to devel/lib directory in your workspace folder
 
 * Load map to planner 
 ```sh

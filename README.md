@@ -1,7 +1,7 @@
 # 3DMobileRobotNavigation
 
 # Turtlebot gazebo simulation
-- Firstly you have clone this repository to your source directory in your workspace and build it, later you have:
+- Firstly you have clone this repository to your source directory in your workspace and build it or you can download and install [turtlebot] packages, later you have:
 - To start Gazebo simulation
  ```sh
 $ roslaunch turtlebot_gazebo turtlebot_world.launch
@@ -58,6 +58,6 @@ $
 
 **Free Software, Hell Yeah!**
 
-
    [labbot]: <https://github.com/PUTvision/ROS-labbot>
+   [turtlebot]: <http://wiki.ros.org/Robots/TurtleBot>
   

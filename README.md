@@ -19,7 +19,7 @@ $ roslaunch turtlebot_teleop keyboard_teleop.launch
   ```sh
 $ roslaunch turtlebot_rviz_launchers view_robot.launch
 ```
-> If you want to see created map please add in Rviz MarkerArray in topic occupied_cells
+> If you want to see created map please add in Rviz MarkerArray in topic occupied_cells_vis_array
 
   - Save projected version of map
   ```sh
@@ -45,6 +45,11 @@ $ sudo apt-get install ros-kinetic-octomap
  ```sh
 $ roslaunch path-to-file/file.launch
 ```
+* If you want to have preview of map
+ ```sh
+$ rviz rviz
+```
+> If you want to see created map please add in Rviz MarkerArray in topic occupied_cells_vis_array
 * Let's create map by control robot by kinect controller
 * Save map by command 
  ```sh

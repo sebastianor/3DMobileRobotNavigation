@@ -37,9 +37,12 @@ $ roslaunch turtlebot_gazebo amcl_demo.launch map_file:=path-to-file/map.yaml
 # Run on real robot 
 
 * [labbot] - Clone this repository!
-* Install octomap_server by command 
+* Install required packages
  ```sh
-$ sudo apt-get install ros-kinetic-octomap 
+$ sudo apt-get install ros-kinetic-octomap-server
+$ sudo apt-get install ros-kinetic-map-server
+
+
 ```
 * Clone our launch file to labbot source directory 
  ```sh

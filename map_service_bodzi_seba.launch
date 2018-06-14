@@ -1,0 +1,31 @@
+<launch>
+
+<!--Labbot launch-->
+
+<include file="$(find labbot)/launch/labbot.launch"/>
+
+<!-- Tf publication linking base of the robot with the camera link-->
+ <node pkg="tf" type="static_transform_publisher" name="base_to_kinect_broadcaster" args="0.1 0 0.615 0 0 0 labbot_base_link camera_link 100" />
+
+
+
+<include file="$(find freenect_launch)/launch/freenect.launch"/>
+
+<node pkg="octomap_server" type="octomap_server_node" name="octomap_server">
+<param name="resolution" value="0.05" />
+ 
+<param name="frame_id" type="string" value="map" />
+ 
+<!-- maximum range to integrate (speedup!) -->
+<param name="sensor_model/max_range" value="1.0" />
+
+<param name="pointcloud_max_z" value="2.0" />
+<param name="pointcloud_min_z" value="0.2" />
+ 
+<!-- data source to integrate (PointCloud2) -->
+<remap from="cloud_in" to="/camera/depth/points" />
+ 
+</node>
+
+
+</launch>

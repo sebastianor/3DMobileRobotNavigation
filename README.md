@@ -1,7 +1,17 @@
 # 3DMobileRobotNavigation
 
 # Turtlebot gazebo simulation
-- Firstly you have clone this repository to your source directory in your workspace and build it or you can download and install [turtlebot] packages, later in your workspace you have:
+- Firstly you have clone this repository to your source directory in your workspace and you should download and install [turtlebot] packages
+
+```sh
+$ sudo apt-get install ros-kinetic-turtlebot-gazebo 
+$ sudo apt-get install ros-kinetic-turtlebot-navigation 
+$ sudo apt-get install ros-kinetic-octomap-server
+$ sudo apt-get install ros-kinetic-map-server
+
+
+```
+- later in your workspace you have:
 - To start Gazebo simulation
  ```sh
 $ roslaunch turtlebot_gazebo turtlebot_world.launch

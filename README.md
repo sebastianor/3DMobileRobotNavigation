@@ -56,8 +56,6 @@ $ rosrun map_saver map_saver -f map.yaml map:=projected_map
 $ 
 ```
 
-**Free Software, Hell Yeah!**
-
    [labbot]: <https://github.com/PUTvision/ROS-labbot>
    [turtlebot]: <http://wiki.ros.org/Robots/TurtleBot>
   

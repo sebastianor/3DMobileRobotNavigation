@@ -43,7 +43,7 @@ $ sudo apt-get install ros-kinetic-octomap
 ```
 * Clone our launch file to labbot source directory 
  ```sh
-$ roslaunch path-to-file/file.launch
+$ roslaunch path-to-file/map_service_bodzi_seba.launch
 ```
 * If you want to have preview of map
  ```sh

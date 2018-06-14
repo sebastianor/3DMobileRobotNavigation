@@ -72,8 +72,9 @@ $ rosrun map_saver map_saver -f map.yaml map:=projected_map
 
 * Load map to planner 
 ```sh
-$ 
+$ roslaunch path-to-file/move_base_bodzi.launch map_file:= path-to-map/map.yaml
 ```
+> If map is not loading correcty check the map.yaml file. 1) Correct the path to pgm file 2) set z origin from NaN to 0.0000
 
    [labbot]: <https://github.com/PUTvision/ROS-labbot>
    [turtlebot]: <http://wiki.ros.org/Robots/TurtleBot>

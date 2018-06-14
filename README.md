@@ -1,49 +1,66 @@
 # 3DMobileRobotNavigation
- by Wojciech Cieślak and Sebastian Rodykow
 
-Gmapping simulation
+# Turtlebot gazebo simulation
+- Firstly you have clone this repository to your source directory in your workspace and build it, later you have:
+- To start Gazebo simulation
+ ```sh
+$ roslaunch turtlebot_gazebo turtlebot_world.launch
+```
+  - Start octomap server
+  ```sh
+$ roslaunch octomap_turtlebot.launch
+```
+> In this file you can set min and max value of z axis
+  - Start control robot
+  ```sh
+$ roslaunch turtlebot_teleop keyboard_teleop.launch
+```
+  - To get preview in Rviz run 
+  ```sh
+$ roslaunch turtlebot_rviz_launchers view_robot.launch
+```
+> If you want to see created map please add in Rviz MarkerArray in topic occupied_cells
 
-roslaunch turtlebot_gazebo turtlebot_world.launch
-roslaunch turtlebot_gazebo gmapping_demo.launch
-roslaunch turtlebot_rviz_launchers view_navigation.launch
+  - Save projected version of map
+  ```sh
+$ rosrun map_saver map_saver -f map.yaml map:=projected_map
+```
+> Sometimes this command may not works so you have to copy map_saver file to devel/lib directory in your workspace folder
 
-roslaunch turtlebot_teleop keyboard_teleop.launch
+- To run planner with projected map you have to run 
+ ```sh
+$ roslaunch turtlebot_gazebo amcl_demo.launch map_file:=path-to-file/map.yaml
+```
 
-source /opt/ros/kinetic/setup.bash
-roslaunch octomap_turtlebot.launch
+> If map is not loading correcty check the map.yaml file. 1) Correct the path to pgm file 2) set z origin from NaN to 0.0000
 
-rosrun map_saver map_saver -f map.yaml map:=projected_map
+# Run on real robot 
 
-roslaunch turtlebot_rviz_launchers view_robot.launch
+* [labbot] - Clone this repository!
+* Clone our launch file to labbot source directory 
+ ```sh
+$ roslaunch path-to-file/file.launch
+```
+* Let's create map by control robot by kinect controller
+* Save map by command 
+ ```sh
+$ rosrun map_saver map_saver -f map.yaml map:=projected_map
+```
 
-roslaunch openni_launch openni.launch
-
- source /opt/ros/kinetic/setup.bash
-roslaunch turtlebot_gazebo amcl_demo.launch map_file:=/home/wojciech/turtlebot/test_map.yaml
-roslaunch turtlebot_rviz_launchers view_navigation.launch
-
-
-
-Clone package into workspace/src directory
-
-roslaunch turtlebot_gazebo turtlebot_world.launch
-
-roslaunch octomap_turtlebot.launch
-
-roslaunch turtlebot_teleop keyboard_teleop.launch
-
-roslaunch turtlebot_rviz_launchers view_robot.launch
-
-rosrun map_saver map_saver -f map.yaml map:=projected_map
-
-if last command does not works try to move map_saver file to devel/lib in catkin_workspace file
-
-To load saved map and navigate in rviz run
-
-roslaunch turtlebot_gazebo turtlebot_world.launch
-
-roslaunch turtlebot_gazebo amcl_demo.launch map_file:=path-to-file/map.yaml
-roslaunch turtlebot_rviz_launchers view_navigation.launch
+* Load map to planner 
+```sh
+$ 
+```
 
 
-If map is not loading correcty check the map.yaml file. 1) Correct the path to pgm file 2) set z origin from NaN to 0.0000
+License
+----
+
+MIT
+
+
+**Free Software, Hell Yeah!**
+
+
+   [labbot]: <https://github.com/PUTvision/ROS-labbot>
+  
